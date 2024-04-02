@@ -9,7 +9,6 @@ const Guess = ({headliner}) => {
 
   const handleChange = (e) => {
     setAnswer(e.target.value)
-
   }
 
   console.log(headliner.name)
@@ -25,18 +24,19 @@ const Guess = ({headliner}) => {
   }
 
   return (
-    <>
-    <form>
-      <label>
-        Headliner:
-        <input type="text" name="answer" value={answer} onChange={handleChange}/>
-      </label>
-      <input type="submit" value="Submit" onClick={handleClick}/>
-    </form>
-    {wrongAnswer? <p>Wrong</p> : ""}
-    {rightAnswer? <p>Right</p> : ""}
+    <div className="guess-form">
+      <h3>Headliner</h3>
 
-    </>
+
+
+      {rightAnswer? <><h1>{headliner.name}</h1><img src={headliner.images[1].url} alt={headliner.name} /></> : <form>
+        <input type="text" name="answer" value={answer} onChange={handleChange}/>
+        <input type="submit" value="Submit" onClick={handleClick}/>
+      </form>}
+      {wrongAnswer? <p>Wrong</p> : ""}
+
+
+    </div>
   )
 }
 
