@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 
 
-const Guess = () => {
+const Guess = ({headliner}) => {
 
   const [ answer, setAnswer ] = useState('')
+  const [ wrongAnswer, setWrongAnswer ] = useState(false)
+  const [ rightAnswer, setRightAnswer ] = useState(false)
 
   const handleChange = (e) => {
     setAnswer(e.target.value)
-    //console.log(e.target.value)
+
   }
+
+  console.log(headliner.name)
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log(answer)
+    if (answer === headliner.name) {
+      setWrongAnswer(false)
+      setRightAnswer(true)
+    } else {
+      setWrongAnswer(true)
+    }
   }
 
   return (
@@ -24,6 +33,9 @@ const Guess = () => {
       </label>
       <input type="submit" value="Submit" onClick={handleClick}/>
     </form>
+    {wrongAnswer? <p>Wrong</p> : ""}
+    {rightAnswer? <p>Right</p> : ""}
+
     </>
   )
 }
