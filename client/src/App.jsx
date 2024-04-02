@@ -13,9 +13,13 @@ function App() {
   useEffect(()=>setGameData(fakeData), [])
 
   return (
-    <div>
-      <Title />
-      <GameCard gameData={gameData}/>
+    <div className="main-container">
+      <div className="title-container">
+        <Title />
+      </div>
+      <div className="game-container">
+        <GameCard gameData={gameData}/>
+      </div>
     </div>
   );
 }

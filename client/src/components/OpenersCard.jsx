@@ -2,9 +2,10 @@ import React from 'react'
 
 const OpenersCard = ({opener}) => {
   return (
-    <>
-    <p>Opener: {opener.name}</p>
-    </>
+    <div className="openers-card">
+      <img src={opener.images[2].url} alt={opener.name} />
+      <p>{opener.name}</p>
+    </div>
   )
 }
 

@@ -8,11 +8,14 @@ const GameCard = ({gameData}) => {
 if (gameData && Object.keys(gameData).length > 0) {
 
   return (
-    <>
-    <VenueCard venue={gameData.Venue} />
-    <OpenersList openers={gameData.Openers}/>
-    <Guess headliner={gameData.Headliner}/>
-    </>
+    <div className="game-card">
+      <div className="venue-card">
+        <VenueCard venue={gameData.Venue} />
+      </div>
+
+      <OpenersList openers={gameData.Openers}/>
+      <Guess headliner={gameData.Headliner}/>
+    </div>
   )
   } else {
     return <></>

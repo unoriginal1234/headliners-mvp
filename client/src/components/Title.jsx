@@ -2,7 +2,7 @@ import React from 'react'
 
 const Title = () => {
   return (
-    <h1>Headliners Game</h1>
+    <h1>Headliners</h1>
   )
 }
 

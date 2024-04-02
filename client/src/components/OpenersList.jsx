@@ -5,13 +5,16 @@ import OpenersCard from './OpenersCard.jsx'
 
 const OpenersList = ({openers}) => {
   return (
-    <>
-    {
-      openers.map((opener) => {
-        return <OpenersCard opener={opener} key={opener.id}/>
-      })
-    }
-    </>
+    <div className="openers-list">
+      <h3>Openers</h3>
+      <div className="openers-carosel">
+        {
+          openers.map((opener) => {
+            return <OpenersCard opener={opener} key={opener.id}/>
+          })
+        }
+      </div>
+    </div>
   )
 }
 
