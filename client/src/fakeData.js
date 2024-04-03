@@ -1,10 +1,10 @@
 const fakeData = {
-  Venue : {
+  venue : {
     Name: 'Estadio Universidad San Marcos',
     Date: '3/25/2011',
     Location: 'Lima, Peru'
   },
-  Headliner: {
+  headliner: {
     "external_urls": {
         "spotify": "https://open.spotify.com/artist/0EmeFodog0BfCgMzAIvKQp"
     },
@@ -42,7 +42,7 @@ const fakeData = {
     "type": "artist",
     "uri": "spotify:artist:0EmeFodog0BfCgMzAIvKQp"
   },
-  Openers: [
+  openers: [
     {
         "external_urls": {
             "spotify": "https://open.spotify.com/artist/3FUY2gzHeIiaesXtOAdB7A"

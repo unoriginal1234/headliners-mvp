@@ -1,6 +1,6 @@
-/* .main-container {
-  display: flex;
-} */
+.main-container {
+  max-width: 600px;
+}
 
 body {
   background: #121212;
@@ -38,7 +38,7 @@ body {
 }
 
 .game-container {
-  max-width: 600px;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

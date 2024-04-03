@@ -1,14 +1,13 @@
 require('dotenv').config()
 const express = require('express');
+const getCard = require('../db/models')
 
 const app = express();
 const PORT = process.env.PORT;
 
 const path = require('path');
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
+app.get('/game', getCard);
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 

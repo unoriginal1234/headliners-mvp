@@ -10,11 +10,11 @@ if (gameData && Object.keys(gameData).length > 0) {
   return (
     <div className="game-card">
       <div className="venue-card">
-        <VenueCard venue={gameData.Venue} />
+        <VenueCard venue={gameData.venue} />
       </div>
 
-      <OpenersList openers={gameData.Openers}/>
-      <Guess headliner={gameData.Headliner}/>
+      <OpenersList openers={gameData.openers}/>
+      <Guess headliner={gameData.headliner}/>
     </div>
   )
   } else {
