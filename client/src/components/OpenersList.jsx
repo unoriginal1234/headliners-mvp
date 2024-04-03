@@ -6,7 +6,7 @@ import OpenersCard from './OpenersCard.jsx'
 const OpenersList = ({openers}) => {
   return (
     <div className="openers-list">
-      <h3>Openers</h3>
+      <h2>Openers</h2>
       <div className="openers-carosel">
         {
           openers.map((opener) => {

@@ -3,8 +3,8 @@ import React from 'react'
 const VenueCard = ({venue}) => {
   return (
     <>
-      <h3>Venue</h3>
-      <p>{venue.Name}</p>
+      <h2>Venue</h2>
+      <p style={{"fontWeight":"bold"}}>{venue.Name}</p>
 
       <div className="venue-setting">
         <p>Date: {venue.Date}</p>

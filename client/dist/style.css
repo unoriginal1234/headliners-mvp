@@ -1,5 +1,6 @@
 .main-container {
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -29,6 +30,10 @@ body {
   --decorative-base: #fff;
   --decorative-subdued: #292929;
   font-family: CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+}
+
+h2 {
+  color: #1ed760
 }
 
 .title-container {
@@ -74,13 +79,50 @@ body {
   align-items: center;
 }
 
+.openers-card img {
+  border-radius: 50%;
+}
+
 .venue-setting {
   display: flex;
-  gap: 10px;
+  gap: 25%;
 }
 
 .guess-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.guess-form form {
+  display: flex;
+}
+
+.guess-text-input {
+  margin-block: 0px;
+  font-weight: 400;
+  background-color: #242424;
+  border: 0;
+  border-radius: 500px;
+  color: #fff !important;
+  height: 48px;
+  padding: 6px 36px;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-transform: none;
+  box-sizing: border-box;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  padding-block: 1px;
+  padding-inline: 2px;
 }

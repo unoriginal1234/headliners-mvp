@@ -25,17 +25,15 @@ const Guess = ({headliner}) => {
 
   return (
     <div className="guess-form">
-      <h3>Headliner</h3>
-
-
+      <h2>Headliner</h2>
 
       {rightAnswer? <><h1>{headliner.name}</h1><img src={headliner.images[1].url} alt={headliner.name} /></> : <form>
-        <input type="text" name="answer" value={answer} onChange={handleChange}/>
-        <input type="submit" value="Submit" onClick={handleClick}/>
+        <div style={{ display: 'flex' }}>
+          <input type="text" name="answer" placeholder="Can you guess the Headliner?"className="guess-text-input" value={answer} onChange={handleChange}/>
+          <input type="submit" value="Submit" className="guess-submit" onClick={handleClick} style={{ marginLeft: '10px' }}/>
+        </div>
       </form>}
       {wrongAnswer? <p>Wrong</p> : ""}
-
-
     </div>
   )
 }
