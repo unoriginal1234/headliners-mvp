@@ -3,6 +3,15 @@
   flex-direction: column;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tagline {
+  line-height: 10%;
+}
+
 body {
   background: #121212;
   --background-highlight: #1a1a1a;
@@ -71,6 +80,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: baseline;
 }
 
 .openers-card {
@@ -80,12 +90,20 @@ h2 {
 }
 
 .openers-card img {
+  float: left;
+  width:  160px;
+  height: 160px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .venue-setting {
   display: flex;
   gap: 25%;
+}
+
+.venue-setting p {
+  font-size: large;
 }
 
 .guess-form {
@@ -94,11 +112,14 @@ h2 {
   align-items: center;
 }
 
-.guess-form form {
+.guess-search {
   display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .guess-text-input {
+  flex: 2;
   margin-block: 0px;
   font-weight: 400;
   background-color: #242424;
@@ -125,4 +146,23 @@ h2 {
   margin: 0em;
   padding-block: 1px;
   padding-inline: 2px;
+}
+
+.guess-submit {
+  background: none;
+}
+
+.headliner-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headliner-winner img {
+  border-radius: 50%;
+}
+
+.social-media {
+  display: flex;
+  gap: 10%
 }

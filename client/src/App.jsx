@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Title from './components/Title.jsx'
 import GameCard from './components/GameCard.jsx'
+import SpotifyPlayer from './components/SpotifyPlayer.jsx'
 import axios from 'axios'
 
 import fakeData from './fakeData.js'
@@ -24,12 +25,11 @@ function App() {
 
   return (
     <div className="main-container">
-      <div className="title-container">
         <Title />
-      </div>
       <div className="game-container">
         <GameCard gameData={gameData}/>
       </div>
+      {/* <SpotifyPlayer /> */}
     </div>
   );
 }
