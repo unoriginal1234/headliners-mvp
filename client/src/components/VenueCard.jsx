@@ -4,7 +4,7 @@ const VenueCard = ({venue}) => {
   return (
     <>
       <h2>Venue</h2>
-      <p style={{"fontWeight":"bold", "font-size":"x-large"}}>{venue.Name}</p>
+      <p className="venue-name">{venue.Name}</p>
 
       <div className="venue-setting">
         <p>Date: {venue.Date}</p>

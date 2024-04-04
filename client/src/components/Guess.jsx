@@ -26,16 +26,21 @@ const Guess = ({headliner}) => {
     }
   }
 
+  const spotifySrc = `https://open.spotify.com/embed/artist/${headliner.id}?utm_source=generator`
+
   return (
     <div className="guess-form">
       <h2>Headliner</h2>
 
-      {rightAnswer? <div className="headliner-winner">
+      {rightAnswer?
+      <div className="headliner-winner">
         <h1>{headliner.name}</h1>
-        <img src={headliner.images[1].url} alt={headliner.name} /><div className="social-media"><FaXTwitter /><FaFacebookSquare /><FaInstagramSquare /></div>
+        <div className="social-media"><FaXTwitter /><FaFacebookSquare /><FaInstagramSquare /></div>
+        <img src={headliner.images[1].url} alt={headliner.name} />
+        <iframe style={{"border-radius":"12px"}} src={spotifySrc} width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div> : <form>
         <div className="guess-search">
-          <input type="text" name="answer" placeholder="Guess!"className="guess-text-input" value={answer} onChange={handleChange}/>
+          <input type="text" name="answer" placeholder="Guess Today's Headliner!"className="guess-text-input" value={answer} onChange={handleChange}/>
           <button type="submit" value="Submit" className="guess-submit" onClick={handleClick} style={{ marginLeft: '10px' }}><ImSearch style={{"color": "#a7a7a7" }}/></button>
         </div>
       </form>}

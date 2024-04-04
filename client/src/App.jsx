@@ -24,13 +24,17 @@ function App() {
   }
 
   return (
-    <div className="main-container">
-        <Title />
-      <div className="game-container">
-        <GameCard gameData={gameData}/>
+    <>
+      <div className="main-container">
+          <Title />
+        <div className="game-container">
+          <GameCard gameData={gameData}/>
+        </div>
+
       </div>
-      {/* <SpotifyPlayer /> */}
-    </div>
+      <p style={{"fontSize": "small", "bottom": "0px"}}>Images &copy; Spotify</p>
+    </>
+
   );
 }
 
