@@ -8,9 +8,8 @@ const Title = () => {
       </div>
 
       <div className="tagline">
-        <p>Venue.</p>
-        <p>Openers.</p>
-        <p>Who's the Headliner?</p>
+        <p>Venue</p>
+        <p>Openers...</p>
       </div>
     </div>
   )

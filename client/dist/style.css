@@ -1,12 +1,20 @@
 .main-container {
   display: flex;
   flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  border-bottom: double
+}
+
+h1 {
+  font-size: 250%;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
+  border-bottom: double
 }
 
 .tagline {
@@ -40,10 +48,13 @@ body {
   --decorative-base: #fff;
   --decorative-subdued: #292929;
   font-family: CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+  font-size: 140%;
 }
 
 h2 {
-  color: #1ed760
+  color: #1ed760;
+  font-size: 200%;
+  margin-bottom: 5%;
 }
 
 .title-container {
@@ -71,10 +82,19 @@ h2 {
   align-items: center;
 }
 
+.venue-card p {
+  font-size: 180%;
+}
+
+.venue-setting p {
+  font-size: 150%;
+}
+
 .openers-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .openers-carosel {
@@ -99,13 +119,8 @@ h2 {
   object-fit: cover;
 }
 
-.venue-setting {
-  display: flex;
-  gap: 25%;
-}
-
-.venue-setting p {
-  font-size: large;
+.openers-card img:hover {
+  transform: scale(1.2);
 }
 
 .guess-form {
@@ -170,6 +185,11 @@ h2 {
   margin-top: 5%;
 }
 
+.headline-name {
+  margin-top: 0;
+  color: #1ed760;
+}
+
 .social-media {
   display: flex;
   gap: 10%
@@ -179,3 +199,24 @@ h2 {
   font-size: x-large;
   margin-bottom: 0%;
 }
+
+.venue-setting {
+  display: flex;
+  gap: 25%;
+}
+
+.venue-setting p {
+  font-size: large;
+}
+
+ @keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+ }
+
+ .wrong-answer {
+  animation: horizontal-shaking 0.5s;
+ }
