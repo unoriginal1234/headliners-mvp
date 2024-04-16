@@ -48,7 +48,7 @@ body {
   --decorative-base: #fff;
   --decorative-subdued: #292929;
   font-family: CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
-  font-size: 140%;
+  font-size: 120%;
 }
 
 h2 {
@@ -163,6 +163,7 @@ h2 {
   margin: 0em;
   padding-block: 1px;
   padding-inline: 2px;
+  font-size: 110%;
 }
 
 .guess-submit {
