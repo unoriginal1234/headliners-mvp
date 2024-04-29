@@ -2,11 +2,18 @@ const clientConnect = require('./index.js')
 
 const getCard = (req, res) => {
 
+  console.log(req.query.todaysDate);
+
+  let query1 = {
+    text: 'SELECT * FROM gamecard WHERE playdate = $1',
+    values: [req.query.todaysDate]
+  }
+
   const client = clientConnect()
   client.connect()
-    .then(()=> client.query('SELECT * FROM gamecard WHERE isplaying = true'))
+    .then(()=> client.query(query1))
     .then((result) => {
-      //console.log(result.rows)
+      console.log(result.rows)
       res.status(200).send(result.rows)
     })
     .then(()=> client.end())

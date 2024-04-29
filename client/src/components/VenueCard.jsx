@@ -3,7 +3,7 @@ import React from 'react'
 const VenueCard = ({venue}) => {
   return (
     <>
-      <h2 style={{"margin-bottom":"0%"}}>Venue</h2>
+      <h2 style={{"marginBottom":"0%"}}>Venue</h2>
       <p className="venue-name">{venue.Name}</p>
 
       <div className="venue-setting">

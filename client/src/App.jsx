@@ -9,18 +9,29 @@ import fakeData from './fakeData.js'
 function App() {
 
   const [gameData, setGameData] = useState({})
+  const [todaysDate, setTodaysDate] = useState(new Date().toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }))
 
   console.log(gameData, 'data from server')
+  console.log(todaysDate)
 
   //useEffect(()=>setGameData(fakeData), [])
-  useEffect(()=>populate(), [])
+  useEffect(() => {
+    populate();
+  }, [])
 
   const populate = () => {
+
     axios({
       method: 'get',
-      url: '/game'
+      url: '/game',
+      params: { todaysDate : JSON.stringify(todaysDate) }
     })
-    .then((result)=>setGameData(result.data[0]))
+    .then((result) => {
+      setGameData(result.data[0]);
+    })
+    .catch((error) => {
+      console.log('Error:', error);
+    });
   }
 
   return (

@@ -20,7 +20,7 @@ if (gameData && Object.keys(gameData).length > 0) {
     </div>
   )
   } else {
-    return <></>
+    return <p>Sound check...</p>
   }
 }
 
