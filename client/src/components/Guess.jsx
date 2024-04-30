@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Guesses from './Guesses.jsx'
+import Hints from './Hints.jsx'
 import { ImSearch } from "react-icons/im";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -9,8 +11,10 @@ const Guess = ({headliner}) => {
   const [ answer, setAnswer ] = useState('')
   const [ wrongAnswer, setWrongAnswer ] = useState(false)
   const [ rightAnswer, setRightAnswer ] = useState(false)
+  const [ guesses, setGuesses ] = useState(0);
 
   const handleChange = (e) => {
+
     setAnswer(e.target.value)
     if (answer.length === 0) {
       setWrongAnswer(false)
@@ -21,11 +25,12 @@ const Guess = ({headliner}) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    if (answer.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '') === headliner.name.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '')) {
+    if (answer.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "") === headliner.name.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
       setWrongAnswer(false)
       setRightAnswer(true)
     } else {
       setWrongAnswer(true)
+      setGuesses(guesses + 1)
     }
   }
 
@@ -49,13 +54,18 @@ const Guess = ({headliner}) => {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy">
           </iframe>
-        </div> : <form>
+        </div>
+        : <form>
         <div className="guess-search">
           <input type="text" name="answer" placeholder="Guess Today's Headliner!"className="guess-text-input" value={answer} onChange={handleChange}/>
           <button type="submit" value="Submit" className="guess-submit" onClick={handleClick} style={{ marginLeft: '10px' }}><ImSearch style={{"color": "#a7a7a7" }}/></button>
         </div>
+        <Guesses guesses={guesses}/>
+        {wrongAnswer? <p className="wrong-answer">WRONG</p> : ""}
+        <Hints guesses={guesses} headliner={headliner}/>
       </form>}
-      {wrongAnswer? <p className="wrong-answer">Wrong</p> : ""}
+
+
     </div>
   )
 }

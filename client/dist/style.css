@@ -174,6 +174,11 @@ h2 {
   width: 90%
 }
 
+.guess-number {
+  display: flex;
+  justify-content: center;
+}
+
 .headliner-winner {
   display: flex;
   flex-direction: column;
@@ -219,5 +224,13 @@ h2 {
  }
 
  .wrong-answer {
+  display: flex;
+  justify-content: center;
   animation: horizontal-shaking 0.5s;
+ }
+
+ .genre-hints {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
  }
