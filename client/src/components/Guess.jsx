@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Guesses from './Guesses.jsx'
 import Hints from './Hints.jsx'
+import JustTellMe from './JustTellMe.jsx'
 import { ImSearch } from "react-icons/im";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -12,9 +13,9 @@ const Guess = ({headliner}) => {
   const [ wrongAnswer, setWrongAnswer ] = useState(false)
   const [ rightAnswer, setRightAnswer ] = useState(false)
   const [ guesses, setGuesses ] = useState(0);
+  const [ giveUp, setGiveUp ] = useState(false)
 
   const handleChange = (e) => {
-
     setAnswer(e.target.value)
     if (answer.length === 0) {
       setWrongAnswer(false)
@@ -33,6 +34,18 @@ const Guess = ({headliner}) => {
       setGuesses(guesses + 1)
     }
   }
+
+  const handleJustTellMe = (e) => {
+    e.preventDefault()
+    setWrongAnswer(false)
+    setRightAnswer(true)
+  }
+
+  if (guesses >= headliner.genres.length && giveUp === false) {
+    setGiveUp(true)
+  }
+
+
 
   const spotifySrc = `https://open.spotify.com/embed/artist/${headliner.id}?utm_source=generator`
 
@@ -63,6 +76,8 @@ const Guess = ({headliner}) => {
         <Guesses guesses={guesses}/>
         {wrongAnswer? <p className="wrong-answer">WRONG</p> : ""}
         <Hints guesses={guesses} headliner={headliner}/>
+        {giveUp? <JustTellMe handleJustTellMe={handleJustTellMe}/> : ""}
+
       </form>}
 
 
