@@ -71,7 +71,7 @@ const Guess = ({headliner}) => {
         : <form>
         <div className="guess-search">
           <input type="text" name="answer" placeholder="Guess Today's Headliner!"className="guess-text-input" value={answer} onChange={handleChange}/>
-          <button type="submit" value="Submit" className="guess-submit" onClick={handleClick} style={{ marginLeft: '10px' }}><ImSearch style={{"color": "#a7a7a7" }}/></button>
+          <button type="submit" value="Submit" className="guess-submit" onClick={handleClick} style={{ marginLeft: '10px' }}><ImSearch style={{"color": "#a7a7a7", "margin":"8px" }}/></button>
         </div>
         <Guesses guesses={guesses}/>
         {wrongAnswer? <p className="wrong-answer">WRONG</p> : ""}
