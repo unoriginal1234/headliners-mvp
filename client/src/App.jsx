@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Title from './components/Title.jsx'
 import GameCard from './components/GameCard.jsx'
-import SpotifyPlayer from './components/SpotifyPlayer.jsx'
 import axios from 'axios'
 
 import fakeData from './fakeData.js'
@@ -43,7 +42,13 @@ function App() {
         </div>
 
       </div>
-      <p style={{"fontSize": "small", "bottom": "0px"}}>Images &copy; Spotify</p>
+      <div className="footer">
+        <p style={{"fontSize": "small", "bottom": "0px"}}>Images &copy; Spotify</p>
+        <p style={{"fontSize": "small", "bottom": "0px"}}>Headliners &copy; Brian Biancardi</p>
+        <p style={{"fontSize": "small", "bottom": "0px"}}>Website &copy; Eric T. Roth</p>
+      </div>
+
+
     </>
 
   );

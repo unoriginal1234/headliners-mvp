@@ -4,7 +4,7 @@ const Title = () => {
   return (
     <div className="header">
       <div className="title">
-        <h1>Headliners</h1>
+        <h1 style={{"margin" : "5%"}}>Headliners</h1>
       </div>
 
       <div className="tagline">

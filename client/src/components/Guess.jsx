@@ -14,7 +14,8 @@ const Guess = ({headliner}) => {
   const [ wrongAnswer, setWrongAnswer ] = useState(false)
   const [ rightAnswer, setRightAnswer ] = useState(false)
   const [ guesses, setGuesses ] = useState(0);
-  const [ giveUp, setGiveUp ] = useState(false)
+  const [ giveUp, setGiveUp ] = useState(false);
+  const [ gaveUp, setGaveUp ] = useState(false);
 
   const handleChange = (e) => {
     setAnswer(e.target.value)
@@ -27,7 +28,18 @@ const Guess = ({headliner}) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    if (answer.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "") === headliner.name.toLowerCase().replace(/\s/g, '').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').replace(/-/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "")) {
+    if (answer.
+      toLowerCase().
+      replace(/\s/g, '').
+      replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').
+      replace(/-/g, '').
+      normalize("NFD").
+      replace(/[\u0300-\u036f]/g, "") === headliner.name.
+      toLowerCase().replace(/\s/g, '').
+      replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').
+      replace(/-/g, '').
+      normalize("NFD").
+      replace(/[\u0300-\u036f]/g, "")) {
       setWrongAnswer(false)
       setRightAnswer(true)
     } else {
@@ -40,6 +52,7 @@ const Guess = ({headliner}) => {
     e.preventDefault()
     setWrongAnswer(false)
     setRightAnswer(true)
+    setGaveUp(true)
   }
 
   if (guesses >= headliner.genres.length && giveUp === false) {
@@ -54,7 +67,7 @@ const Guess = ({headliner}) => {
 
       {rightAnswer?
       <div className="headliner-winner">
-        <Results guesses={guesses}/>
+        <Results guesses={guesses} gaveUp={gaveUp}/>
         <h1 className="headline-name">{headliner.name}</h1>
         <div className="social-media"><FaXTwitter /><FaFacebookSquare /><FaInstagramSquare /></div>
           <img src={headliner.images[1].url} alt={headliner.name} />
