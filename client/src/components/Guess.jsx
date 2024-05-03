@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Guesses from './Guesses.jsx'
 import Hints from './Hints.jsx'
 import JustTellMe from './JustTellMe.jsx'
+import Results from './Results.jsx'
 import { ImSearch } from "react-icons/im";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -45,8 +46,6 @@ const Guess = ({headliner}) => {
     setGiveUp(true)
   }
 
-
-
   const spotifySrc = `https://open.spotify.com/embed/artist/${headliner.id}?utm_source=generator`
 
   return (
@@ -55,6 +54,7 @@ const Guess = ({headliner}) => {
 
       {rightAnswer?
       <div className="headliner-winner">
+        <Results guesses={guesses}/>
         <h1 className="headline-name">{headliner.name}</h1>
         <div className="social-media"><FaXTwitter /><FaFacebookSquare /><FaInstagramSquare /></div>
           <img src={headliner.images[1].url} alt={headliner.name} />
@@ -79,8 +79,6 @@ const Guess = ({headliner}) => {
         {giveUp? <JustTellMe handleJustTellMe={handleJustTellMe}/> : ""}
 
       </form>}
-
-
     </div>
   )
 }
