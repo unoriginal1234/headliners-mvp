@@ -1,4 +1,7 @@
 import {React, useState} from 'react'
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
 const Results = ({guesses, gaveUp}) => {
 
@@ -18,8 +21,21 @@ const Results = ({guesses, gaveUp}) => {
     setResult('in the PARKING LOT')
   }
 
+  const headlinersURL = 'https://headliners-mvp-production.up.railway.app'
+  const twitterURL = `https://twitter.com/intent/tweet?text=I%20was%20${result}%20for%20today's%20Headliner!&url=${headlinersURL}`
+
   return (
     <div>
+      <div className="social-media">
+          <a
+            href={twitterURL}
+            data-size="large"
+            target="_blank">
+            <FaXTwitter />
+          </a>
+          {/* <FaFacebookSquare />
+          <FaInstagramSquare /> */}
+        </div>
       <p>you were {result} for...</p>
     </div>
   )
