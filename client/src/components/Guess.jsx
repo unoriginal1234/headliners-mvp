@@ -32,7 +32,7 @@ const Guess = ({headliner}) => {
       clearTimeout(timeClear);
       setTimeClear(setTimeout(()=> {
         getArtists();
-      }, 250))
+      }, 200))
     }
   }
 
