@@ -17,7 +17,9 @@ const Results = ({guesses, gaveUp}) => {
     setResult('in GENERAL ADMISSION')
   } else if (guesses === 4 && gaveUp === false && result !== 'in the NOSEBLEEDS') {
     setResult('in the NOSEBLEEDS')
-  } else if (guesses > 5 || gaveUp === true && result !== 'in the PARKING LOT') {
+  }  else if (gaveUp === true && result !== 'in the PARKING LOT') {
+    setResult('in the PARKING LOT')
+  } else if (guesses > 5 && result !== 'in the PARKING LOT') {
     setResult('in the PARKING LOT')
   }
 
