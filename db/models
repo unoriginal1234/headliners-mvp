@@ -27,7 +27,7 @@ const getArtists = (req, res) => {
   // TO DO: install the unaccent dictionary in the database and then include in the inquery
 
   let query1 = {
-    text: "SELECT artist FROM artists WHERE lower(unaccent(artist)) LIKE '%' || lower($1) || '%' LIMIT 5 ORDER BY artist ASC",
+    text: "SELECT artist FROM artists WHERE lower(unaccent(artist)) LIKE '%' || lower($1) || '%' LIMIT 5",
     values: [req.query.artist]
   }
 
