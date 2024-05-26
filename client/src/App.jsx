@@ -10,9 +10,6 @@ function App() {
   const [gameData, setGameData] = useState({})
   const [todaysDate, setTodaysDate] = useState(new Date().toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }))
 
-  console.log(gameData, 'data from server')
-  console.log(todaysDate)
-
   //useEffect(()=>setGameData(fakeData), [])
   useEffect(() => {
     populate();
