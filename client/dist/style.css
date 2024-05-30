@@ -3,7 +3,7 @@
   flex-direction: column;
   max-width: 720px;
   margin: 0 auto;
-  border-bottom: double
+  /* border-bottom: double */
 }
 
 h1 {
@@ -160,7 +160,7 @@ a {
   text-indent: 0px;
   text-shadow: none;
   display: inline-block;
-  text-align: start;
+  text-align: center;
   appearance: auto;
   -webkit-rtl-ordering: logical;
   cursor: text;
@@ -310,4 +310,5 @@ a {
 .footer {
   display: flex;
   justify-content: space-between;
+  border-top: double
 }
