@@ -23,7 +23,7 @@ const Results = ({guesses, gaveUp}) => {
     setResult('in the PARKING LOT')
   }
 
-  const headlinersURL = 'https://headliners-mvp-production.up.railway.app'
+  const headlinersURL = 'https://playheadliners.up.railway.app/'
   const twitterURL = `https://twitter.com/intent/tweet?text=I%20was%20${result}%20for%20today's%20Headliner!&url=${headlinersURL}`
 
   return (
@@ -37,7 +37,7 @@ const Results = ({guesses, gaveUp}) => {
           </a>
           {/* <FaFacebookSquare />
           <FaInstagramSquare /> */}
-        </div>
+      </div>
       <p>you were {result} for...</p>
     </div>
   )

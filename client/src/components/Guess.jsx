@@ -3,6 +3,7 @@ import Guesses from './Guesses.jsx'
 import Hints from './Hints.jsx'
 import JustTellMe from './JustTellMe.jsx'
 import Results from './Results.jsx'
+import Record from './Record.jsx'
 import axios from 'axios'
 import { ImSearch } from "react-icons/im";
 
@@ -43,7 +44,7 @@ const Guess = ({headliner}) => {
       params: {artist : answer}
     })
     .then((result) => {
-      console.log(result.data)
+      //console.log(result.data)
       setOptions((result.data.map((res) => res.artist)));
     })
     .catch((error) => {
@@ -104,10 +105,12 @@ const Guess = ({headliner}) => {
 
       {rightAnswer?
       <div className="headliner-winner">
+        <Record />
         <Results guesses={guesses} gaveUp={gaveUp}/>
         <h1 className="headline-name">{headliner.name}</h1>
         <div className="headliner-pic-spot">
             <img src={headliner.images[1].url} alt={headliner.name}/>
+
             <iframe style={{"borderRadius":"12px"}}
                   src={spotifySrc}
                   width="100%"
@@ -118,7 +121,9 @@ const Guess = ({headliner}) => {
                   loading="lazy">
             </iframe>
         </div>
+
       </div>
+
         : <form>
 
         <div className="guess-search">
