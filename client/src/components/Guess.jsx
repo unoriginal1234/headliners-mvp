@@ -4,6 +4,7 @@ import Hints from './Hints.jsx'
 import JustTellMe from './JustTellMe.jsx'
 import Results from './Results.jsx'
 import Record from './Record.jsx'
+import NextUp from './NextUp.jsx'
 import axios from 'axios'
 import { ImSearch } from "react-icons/im";
 
@@ -69,12 +70,14 @@ const Guess = ({headliner}) => {
   const checkAnswer = (submission) => {
     if (submission.
       toLowerCase().
+      replace(/\bthe\b/gi, '').
       replace(/\s/g, '').
       replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').
       replace(/-/g, '').
       normalize("NFD").
       replace(/[\u0300-\u036f]/g, "") === headliner.name.
       toLowerCase().
+      replace(/\bthe\b/gi, '').
       replace(/\s/g, '').
       replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').
       replace(/-/g, '').
@@ -110,7 +113,7 @@ const Guess = ({headliner}) => {
         <h1 className="headline-name">{headliner.name}</h1>
         <div className="headliner-pic-spot">
             <img src={headliner.images[1].url} alt={headliner.name}/>
-
+            <NextUp />
             <iframe style={{"borderRadius":"12px"}}
                   src={spotifySrc}
                   width="100%"

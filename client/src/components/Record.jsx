@@ -18,13 +18,13 @@ const Record = () => {
   }, [])
 
   return (
-    <div className="next-up">
+    <div className="record">
       { newbie  ?
-        <p>
+        <p style={{"marginTop": 0}}>
           YOUR FIRST HEADLINER!
         </p>
         :
-        <p>
+        <p style={{"marginTop": 0}}>
           Cool. You've seen {history} Headliners.
         </p>
       }

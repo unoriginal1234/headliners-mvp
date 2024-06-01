@@ -38,7 +38,10 @@ const Results = ({guesses, gaveUp}) => {
           {/* <FaFacebookSquare />
           <FaInstagramSquare /> */}
       </div>
-      <p>you were {result} for...</p>
+      {
+        guesses !== 1 ? <p>You were {result} ({guesses} guesses) for...</p> : <p>You were {result} ({guesses} guess) for...</p>
+      }
+
     </div>
   )
 }
