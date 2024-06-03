@@ -39,9 +39,10 @@ const Results = ({guesses, gaveUp}) => {
           <FaInstagramSquare /> */}
       </div>
       {
-        guesses !== 1 ? <p>You were {result} ({guesses} guesses) for...</p> : <p>You were {result} ({guesses} guess) for...</p>
+        gaveUp === true ? <p>You were {result} (gave up) for...</p> : guesses !== 1 ?
+        <p>You were {result} ({guesses} guesses) for...</p>
+        : <p>You were {result} ({guesses} guess) for...</p>
       }
-
     </div>
   )
 }
