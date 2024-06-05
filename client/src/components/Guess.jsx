@@ -142,6 +142,7 @@ const Guess = ({headliner}) => {
           <button
             type="submit"
             value="Submit"
+            aria-label="Submit"
             className="guess-submit"
             onClick={handleClick}
             style={{ marginLeft: '10px' }}>
@@ -158,6 +159,7 @@ const Guess = ({headliner}) => {
                 <button
                   key={index}
                   value={index}
+                  aria-label={option}
                   onClick={handleOptionSelect}>
                   {option}
                 </button>
