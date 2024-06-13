@@ -1,12 +1,11 @@
 import React from 'react'
-import { format,  addDays } from "date-fns";
 
 
 
 
 const VenueCard = ({venue}) => {
 
-  const result = addDays(new Date(venue.Date), 1)
+
 
   console.log(venue.Date, 'this is the date of the show')
 
@@ -18,7 +17,7 @@ const VenueCard = ({venue}) => {
       <p className="venue-name">{venue.Name}</p>
 
       <div className="venue-setting">
-        <p>Date: {format(result, "EEEE, MMMM dd yyyy")}</p>
+        <p>Date: {venue.Date}</p>
         <p>Location: {venue.Location}</p>
       </div>
     </>
