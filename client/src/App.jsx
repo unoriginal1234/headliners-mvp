@@ -10,7 +10,7 @@ function App() {
   const [gameData, setGameData] = useState({})
   const [todaysDate, setTodaysDate] = useState(new Date().toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }))
 
-  console.log(todaysDate)
+  //console.log(todaysDate)
 
   //useEffect(()=>setGameData(fakeData), [])
   useEffect(() => {
