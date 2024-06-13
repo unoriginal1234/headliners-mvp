@@ -8,6 +8,7 @@
     "client-dev": "npx webpack --watch",
     "server-dev": "npx nodemon --watch server server/index.js",
     "build": "npx webpack",
+    "prestart": "npm install",
     "start": "node server/index.js"
   },
   "repository": {
