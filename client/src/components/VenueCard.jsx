@@ -20,7 +20,7 @@ const VenueCard = ({venue}) => {
   };
 
   const showDate = venue.Date.split('-')
-  const readableShowDate = months[parseInt(showDate[1])] + ' ' + showDate[2] + ',' + showDate[0]
+  const readableShowDate = months[parseInt(showDate[1])] + ' ' + showDate[2] + ', ' + showDate[0]
 
   return (
     <>
