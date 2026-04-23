@@ -4,12 +4,11 @@ import Hints from './Hints.jsx'
 import JustTellMe from './JustTellMe.jsx'
 import Results from './Results.jsx'
 import Record from './Record.jsx'
-import NextUp from './NextUp.jsx'
 import axios from 'axios'
 import { ImSearch } from "react-icons/im";
 
 
-const Guess = ({headliner}) => {
+const Guess = ({headliner, onNewGame}) => {
 
   const [ answer, setAnswer ] = useState('')
   const [ wrongAnswer, setWrongAnswer ] = useState(false)
@@ -113,7 +112,11 @@ const Guess = ({headliner}) => {
         <h1 className="headline-name">{headliner.name}</h1>
         <div className="headliner-pic-spot">
             <img src={headliner.images[1].url} alt={headliner.name}/>
-            <NextUp />
+            <button
+              className="play-again"
+              onClick={onNewGame}>
+              Play Again
+            </button>
             <iframe style={{"borderRadius":"12px"}}
                   src={spotifySrc}
                   width="100%"
@@ -134,7 +137,7 @@ const Guess = ({headliner}) => {
           <input
             type="text"
             name="answer"
-            placeholder="Guess Today's Headliner!"
+            placeholder="Guess the Headliner!"
             className="guess-text-input"
             value={answer}
             onChange={handleChange}/>

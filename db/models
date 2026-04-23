@@ -2,11 +2,8 @@ const clientConnect = require('./index.js')
 
 const getCard = (req, res) => {
 
-  console.log(req.query.todaysDate);
-
   let query1 = {
-    text: 'SELECT * FROM gamecard WHERE playdate = $1',
-    values: [req.query.todaysDate]
+    text: 'SELECT * FROM gamecard ORDER BY RANDOM() LIMIT 1',
   }
 
   const client = clientConnect()

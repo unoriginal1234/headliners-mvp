@@ -3,29 +3,17 @@ import Title from './components/Title.jsx'
 import GameCard from './components/GameCard.jsx'
 import axios from 'axios'
 
-import fakeData from './fakeData.js'
 
 function App() {
 
   const [gameData, setGameData] = useState({})
-  const [todaysDate, setTodaysDate] = useState(new Date().toLocaleDateString("en-US", { timeZone: "America/Los_Angeles" }))
 
-  //console.log(todaysDate)
-
-  //useEffect(()=>setGameData(fakeData), [])
   useEffect(() => {
     populate();
   }, [])
 
-
-
   const populate = () => {
-
-    axios({
-      method: 'get',
-      url: '/game',
-      params: { todaysDate : JSON.stringify(todaysDate) }
-    })
+    axios.get('/game')
     .then((result) => {
       setGameData(result.data[0]);
     })
@@ -39,7 +27,7 @@ function App() {
       <div className="main-container">
           <Title />
         <div className="game-container">
-          <GameCard gameData={gameData}/>
+          <GameCard gameData={gameData} onNewGame={populate}/>
         </div>
 
         <div className="footer">

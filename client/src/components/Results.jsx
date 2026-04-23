@@ -24,7 +24,7 @@ const Results = ({guesses, gaveUp}) => {
   }
 
   const headlinersURL = 'https://playheadliners.com/'
-  const twitterURL = `https://twitter.com/intent/tweet?text=I%20was%20${result}%20for%20today's%20Headliner!&url=${headlinersURL}`
+  const twitterURL = `https://twitter.com/intent/tweet?text=I%20was%20${result}%20for%20this%20Headliner!&url=${headlinersURL}`
 
   return (
     <div>
